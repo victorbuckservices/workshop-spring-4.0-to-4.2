@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>cors</title>
+    <script src="/js/jquery-2.1.1.min.js"></script>
+
+    <script>
+
+
+        function cors() {
+            $.ajax("http://127.0.0.1:8090/ws/cors", {method: "POST", contentType: "application/json"})
+                    .done(function (data) {
+                        $("#content").html(data);
+                    })
+                    .fail(function (data) {
+                        $("#content").html(JSON.stringify(data));
+                    });
+        }
+
+        function noCors() {
+            $.ajax("http://127.0.0.1:8090/ws/nocors", {method: "POST", contentType: "application/json"})
+                    .done(function (data) {
+                        $("#content").html(JSON.stringify(data));
+                    })
+                    .fail(function (data) {
+                        $("#content").html(JSON.stringify(data));
+                    });
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h1>Cors controller</h1>
+<button onclick="cors()">cors!!</button>
+<button onclick="noCors()">noCors!!</button>
+
+
+<div id="content"></div>
+
+</body>
+
+
+</html>

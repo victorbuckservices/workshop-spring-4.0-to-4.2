@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Event</title>
+    <script src="/js/jquery-2.1.1.min.js" type="application/javascript"></script>
+
+    <script>
+
+
+        function eventSrc() {
+            var jsonStream = new EventSource('/ws/event');
+
+
+            jsonStream.addEventListener('datetime', function(e) {
+                console.log(e.data);
+                $("#content").append('<p>' + JSON.stringify(e.data) + '</p>');
+            }, false);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<h1>Event controller</h1>
+<button onclick="eventSrc()">event!!</button>
+
+<div id="content"></div>
+
+</body>
+
+
+</html>

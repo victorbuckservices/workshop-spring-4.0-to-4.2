@@ -1,0 +1,1 @@
+INSERT INTO USER (ID, FIRSTNAME,LASTNAME,ADDRESS) VALUES (1234,'Bilbo' , 'Baggins', 'Fondcombe');

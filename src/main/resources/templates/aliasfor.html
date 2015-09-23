@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/jquery-2.1.1.min.js"></script>
+
+    <script>
+
+        function get() {
+            $.ajax("http://localhost:8090/ws/aliasfor", {method: "GET"})
+                    .done(function (data) {
+                        $("#content").append('<p>' + JSON.stringify(data) + '</p>');
+                    });
+        }
+
+        function create() {
+            $.ajax("http://localhost:8090/ws/aliasfor", {method: "PUT"})
+                    .done(function (data) {
+                        $("#content").append('<p>' + JSON.stringify(data) + '</p>');
+                    });
+        }
+    </script>
+
+</head>
+
+<body>
+
+<h1>Cache controller</h1>
+<button onclick="get()">get!!</button>
+<button onclick="create()">create and evict!!</button>
+
+<div id="content"></div>
+
+</body>
+
+
+</html>

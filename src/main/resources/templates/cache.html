@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/js/jquery-2.1.1.min.js"></script>
+
+    <script>
+
+        function cache() {
+            $.ajax("http://localhost:8090/ws/cache", {method: "GET"})
+                    .done(function (data) {
+                        $("#content").html(JSON.stringify(data));
+                    });
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+<h1>Cache controller</h1>
+<button onclick="cache()">request!!</button>
+
+<div id="content"></div>
+
+</body>
+
+
+</html>
