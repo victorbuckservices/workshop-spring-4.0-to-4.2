@@ -1,5 +1,7 @@
 # Workshop - From Spring 4.0 To 4.2
 
+This workshop implements an example of most Spring Framework features from the 4.0 to 4.2 releases.
+
 ## How to use ?
 
 Run the Spring Boot Application application
